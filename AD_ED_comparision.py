@@ -63,11 +63,9 @@ for j in range(len(Pf_ad)):
 ##################################################################################################
 ###########################ED Code ###############################################################
 M=10000
-N=10
-Pf=list(range(101))
-for i in range(101):
-    Pf[i]=(i)/100
-print(Pf)
+N=14
+Pf = [0.001,0.0029,0.005,0.0062,0.0078,0.01,0.0154,0.025,0.0346,0.05,0.0632,0.081,0.1,0.1186,0.15,0.2027,0.2676,0.3573,0.4142,0.4463,0.481,0.5185,0.5588,0.5801,0.607,0.6247,0.648,0.7468,0.8487,0.9382,0.9904,0.9997];
+
 
 snr_avgdB=[-4,2]
 snr_avg=np.power(10,np.divide(snr_avgdB,10))
@@ -95,9 +93,9 @@ for j in range(len(q)):
         Pd_Sim[j][i]=des/M
     
 
-plt.xticks(np.arange(min(Pf), max(Pf), 0.1))
+plt.xticks(np.arange(0,1, 0.1))
 plt.yticks(np.arange(0, 1, 0.1))
-plt.plot(Pf,Pd_Sim[0],color="blue",linestyle=":",label="ED")
+plt.plot(Pf,Pd_Sim[0],color="blue",linestyle="-",label="ED")
 plt.plot(Pf_ad,Pd_sim_ad,color="red",linestyle="-",label="AD")
 plt.xlabel('False Alarm')
 plt.ylabel('Probability of Detection')
